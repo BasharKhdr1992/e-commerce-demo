@@ -1,0 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: cursive;
+}
+
+#main {
+  margin-left: 15px;
+  margin-top: 15px;
+}

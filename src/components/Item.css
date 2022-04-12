@@ -1,0 +1,15 @@
+.item {
+  width: 400px;
+  text-align: center;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.item img {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+}
+.item p {
+  text-align: center;
+}
