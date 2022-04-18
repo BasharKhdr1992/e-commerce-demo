@@ -1,9 +1,16 @@
 .category-item {
   background-color: #efeff0;
   cursor: pointer;
-  margin: 2px;
   padding: 12px;
   font-weight: 700;
+  margin-right: 10px;
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .category-item {
+    margin-bottom: 10px;
+    width: 50%;
+  }
 }

@@ -1,3 +1,4 @@
+import React from 'react';
 import './Category.css';
 import { useState } from 'react';
 
