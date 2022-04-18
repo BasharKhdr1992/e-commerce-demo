@@ -1,7 +1,13 @@
+import React from 'react';
 import Category from './Category';
 import './Categories.css';
 
-const Categories = ({ categories, selectedCategory, onSelectCategory }) => {
+const Categories = ({
+  categories,
+  selectedCategory,
+  onSelectCategory,
+  clearSelection,
+}) => {
   return (
     <div id="categories-container">
       {categories.map((category, index) => {
@@ -14,6 +20,11 @@ const Categories = ({ categories, selectedCategory, onSelectCategory }) => {
           />
         );
       })}
+      <Category
+        key={categories.length}
+        title={'clear selection'}
+        onSelectCategory={clearSelection}
+      />
     </div>
   );
 };

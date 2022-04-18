@@ -5,6 +5,12 @@
 }
 
 #main {
-  margin-left: 15px;
-  margin-top: 15px;
+  width: 90%;
+  margin: auto;
+}
+
+@media screen and (max-width: 1000px) {
+  .main-title {
+    text-align: center;
+  }
 }
