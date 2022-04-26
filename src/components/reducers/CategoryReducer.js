@@ -13,9 +13,9 @@ const categoriesReducer = (state, action) => {
       };
     case Types.CATEGORIES_ERROR:
       return { ...state, isloading: false, error: action.payload };
-    case Types.CLEAR_SElECTION:
+    case Types.CLEAR_SELECTION:
       return { ...state, selectedCategory: '' };
-    case Types.CATEGORY_SElECTED:
+    case Types.CATEGORY_SELECTED:
       return { ...state, selectedCategory: action.payload };
     default:
       throw new Error('something went wrong. Try again later!');

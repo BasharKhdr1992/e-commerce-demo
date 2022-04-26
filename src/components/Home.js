@@ -129,7 +129,7 @@ const Home = () => {
 
   const updateSelectedCategory = (cat) => {
     dispatchCategoriesAction({
-      type: Types.CATEGORY_SElECTED,
+      type: Types.CATEGORY_SELECTED,
       payload: cat,
     });
 
@@ -144,13 +144,13 @@ const Home = () => {
 
   const updateProducts = (cat) => {
     updateSelectedCategory(cat).then((cat) => {
-      setTimeout(filterProductsByCategory(cat), 2000);
+      filterProductsByCategory(cat);
     });
   };
 
   const clearSelectionHandler = () => {
     dispatchCategoriesAction({
-      type: Types.CLEAR_SElECTION,
+      type: Types.CLEAR_SELECTION,
     });
 
     dispatchProductsAction({
