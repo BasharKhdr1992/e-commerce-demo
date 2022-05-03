@@ -3,7 +3,7 @@ import * as Types from './ActionTypes';
 const categoriesReducer = (state, action) => {
   switch (action.type) {
     case Types.CATEGORIES_ARE_LOADING:
-      return { ...state, isloading: true, error: null };
+      return { ...state, isloading: true, categories: null, error: null };
     case Types.CATEGORIES_ARE_LOADED:
       return {
         ...state,
