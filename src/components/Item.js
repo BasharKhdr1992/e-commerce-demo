@@ -25,7 +25,7 @@ const Item = ({ product, onProductClick, isFavourite }) => {
           onClick={() => toggleFavourite(product.id)}
         />
       </div>
-      <div className="img-container">
+      <div className="img-container no-box-shadow">
         <img src={product.image} alt={product.title} title={product.title} />
       </div>
       <p className="prod-title" onClick={() => onProductClick(product.id)}>

@@ -26,6 +26,10 @@
   width: 80%;
 }
 
+.no-box-shadow {
+  box-shadow: none;
+}
+
 .img-container img {
   width: 100%;
   height: auto;
