@@ -66,7 +66,7 @@ const CategoryDetails = () => {
 
   const ErrorMessage = () => {
     return (
-      <div className="error-message">
+      <div className="centering-container">
         <h1>{productState.error}</h1>
       </div>
     );
@@ -92,13 +92,21 @@ const CategoryDetails = () => {
       {productState.error && <ErrorMessage />}
       {prod && (
         <div className="product-container">
-          <div className="img-container">
+          <div className="prod-img-section">
             <IconButton
               icon={<MdWest />}
               text="Back"
               onClick={btnBackClickHandler}
             />
-            <img className="product-img" src={prod.image} alt={prod.title} />
+            <div className="img-outer-container">
+              <div className="img-container">
+                <img
+                  className="product-img"
+                  src={prod.image}
+                  alt={prod.title}
+                />
+              </div>
+            </div>
           </div>
           <div className="product-details">
             <div className="btn-category" onClick={navigateToCategoryPage}>
