@@ -6,7 +6,6 @@
   flex-direction: column;
 }
 
-.loader-container,
 .error-message {
   display: flex;
   justify-content: center;

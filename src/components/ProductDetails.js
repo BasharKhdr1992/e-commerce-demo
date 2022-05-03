@@ -1,7 +1,7 @@
 import React, { useReducer, useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { productReducer } from './reducers/ProductReducer';
-import * as Types from './reducers/ActionTypes';
+import { productReducer } from '../reducers/ProductReducer';
+import * as Types from '../reducers/ActionTypes';
 import Loader from './UI/Loader';
 import './ProductDetails.css';
 import IconButton from './UI/IconButton';
@@ -58,7 +58,7 @@ const CategoryDetails = () => {
 
   const RenderLoader = () => {
     return (
-      <div className="loader-container">
+      <div className="centering-container">
         <Loader h={'120px'} w={'120px'} />
       </div>
     );

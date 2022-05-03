@@ -1,0 +1,25 @@
+.navbar {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.navlink {
+  padding: 2em;
+  width: 5em;
+  text-decoration: none;
+  color: black;
+  border-right: 1px solid gray;
+}
+
+.navlink:last-child {
+  border: none;
+}
+
+.navlink:visited {
+  color: black;
+}
+
+.navlink:hover {
+  color: coral;
+}

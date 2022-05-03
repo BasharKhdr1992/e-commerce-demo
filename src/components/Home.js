@@ -2,9 +2,9 @@ import React, { useEffect, useReducer } from 'react';
 import { useLocation } from 'react-router-dom';
 import Items from './Items';
 import Categories from './Categories';
-import * as Types from './reducers/ActionTypes';
-import categoriesReducer from './reducers/CategoryReducer';
-import productsReducer from './reducers/ProductsReducer';
+import * as Types from '../reducers/ActionTypes';
+import categoriesReducer from '../reducers/CategoryReducer';
+import productsReducer from '../reducers/ProductsReducer';
 import Loader from './UI/Loader';
 
 const Home = () => {
@@ -44,6 +44,17 @@ const Home = () => {
           payload: json,
         })
       )
+      .then(() => {
+        if (location.state) {
+          updateProducts(location.state);
+        } else {
+          dispatchProductsAction({
+            type: Types.PRODUCTS_ARE_LOADING,
+          });
+          // fetch products
+          setTimeout(fetchProducts, 2000);
+        }
+      })
       .catch((err) => {
         dispatchCategoriesAction({
           type: Types.CATEGORIES_ERROR,
@@ -115,16 +126,6 @@ const Home = () => {
 
     // fetch categories
     setTimeout(fetchCategories, 2000);
-
-    if (location.state) {
-      updateProducts(location.state);
-    } else {
-      dispatchProductsAction({
-        type: Types.PRODUCTS_ARE_LOADING,
-      });
-      // fetch products
-      setTimeout(fetchProducts, 2000);
-    }
   }, []);
 
   const updateSelectedCategory = (cat) => {
@@ -160,8 +161,7 @@ const Home = () => {
   };
 
   return (
-    <div id="main" role="main">
-      <h1 className="main-title">Products</h1>
+    <div role="main">
       {categoriesState.isloading && <Loader />}
       {categoriesState.error && <h2>{categoriesState.error}</h2>}
       {categoriesState.categories && (
